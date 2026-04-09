@@ -1,0 +1,33 @@
+{
+  "name": "harorudo/media-compressor",
+  "description": "A Laravel utility for compressing images, PDFs, and files - powered by Intervention Image and Ghostscript",
+  "type": "library",
+  "require": {
+    "php": "^8.2",
+    "intervention/image": "^2.7",
+    "illuminate/support": "^10.0|^11.0"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Harorudo\\MediaCompressor\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Harorudo\\MediaCompressor\\CompressionServiceProvider"
+      ],
+      "aliases": {
+        "Compression": "Harorudo\\MediaCompressor\\Facades\\Compression"
+      }
+    }
+  },
+  "authors": [
+    {
+      "name": "Eddy Harold",
+      "email": "harorudo.dev@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable"
+}

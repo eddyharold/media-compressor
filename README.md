@@ -21,6 +21,14 @@ composer require harorudo/media-compressor
 
 Laravel auto-discovers the service provider. No manual registration needed.
 
+### Verify your environment
+
+Run the doctor command to confirm Ghostscript and the image backend are installed:
+
+```bash
+php artisan compression:doctor
+```
+
 ### Install Ghostscript
 
 **Ubuntu / Debian:**
@@ -45,7 +53,7 @@ Download from [ghostscript.com/releases](https://www.ghostscript.com/releases/) 
 Publish the config file:
 
 ```bash
-php artisan vendor:publish --provider="Harorudo\MediaCompressor\CompressionServiceProvider"
+php artisan vendor:publish --tag=compression-config
 ```
 
 `config/compression.php`:

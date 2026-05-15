@@ -7,11 +7,25 @@
     "intervention/image": "^2.7",
     "illuminate/support": "^10.0|^11.0"
   },
+  "require-dev": {
+    "orchestra/testbench": "^8.0|^9.0",
+    "pestphp/pest": "^2.0",
+    "phpstan/phpstan": "^1.11"
+  },
   "license": "MIT",
   "autoload": {
     "psr-4": {
       "Harorudo\\MediaCompressor\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Harorudo\\MediaCompressor\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/pest",
+    "analyse": "vendor/bin/phpstan analyse"
   },
   "extra": {
     "laravel": {
@@ -29,5 +43,10 @@
       "email": "harorudo.dev@gmail.com"
     }
   ],
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
   "minimum-stability": "stable"
 }

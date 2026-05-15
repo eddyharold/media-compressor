@@ -1,1 +1,54 @@
+# Dependencies
 /vendor/
+/node_modules/
+composer.phar
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+auth.json
+.npmrc
+.netrc
+
+# Test & analysis cache
+/.phpunit.cache/
+/.phpunit.result.cache
+/.phpstan.cache/
+/.php-cs-fixer.cache
+/coverage/
+/build/
+/.pest.cache
+
+# Build artefacts & logs
+*.log
+*.bak
+*.swp
+*.swo
+*.tmp
+/storage/*.key
+/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+
+# IDE & editor
+/.idea/
+/.vscode/
+*.iml
+*.sublime-project
+*.sublime-workspace
+.history/
+
+# Claude / AI tooling
+/.claude/
+CLAUDE.local.md

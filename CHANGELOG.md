@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/eddyharold/media-compressor/compare/v1.1.0...v1.2.0) (2026-05-15)
+
+
+### Features
+
+* add config publishing, doctor command, tests, and static analysis ([3d200c8](https://github.com/eddyharold/media-compressor/commit/3d200c881a608ddc4c5fa177f361f92bee414261))
+
+
+### Bug Fixes
+
+* split chained aspectRatio()-&gt;upsize() call ([86b2cd4](https://github.com/eddyharold/media-compressor/commit/86b2cd4aaa30efaf3985caffe87ebe3a48e66e4d))
+
 ## [1.1.0](https://github.com/eddyharold/media-compressor/compare/v1.0.0...v1.1.0) (2026-05-15)
 
 

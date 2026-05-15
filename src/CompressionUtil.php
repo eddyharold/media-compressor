@@ -34,7 +34,10 @@ class CompressionUtil
         $image = Image::make($file);
 
         if ($maxWidth && $image->width() > $maxWidth) {
-            $image->resize($maxWidth, null, fn($c) => $c->aspectRatio()->upsize());
+            $image->resize($maxWidth, null, function ($c) {
+                $c->aspectRatio();
+                $c->upsize();
+            });
         }
 
         $extension = match ($format) {

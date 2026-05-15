@@ -146,7 +146,7 @@ class CompressionUtil
         $this->assertDiskAllowed($disk);
 
         $originalSize = Storage::disk($disk)->size($storagePath);
-        $absolutePath = Storage::disk($disk)->path($storagePath);
+        $absolutePath = $this->absolutePath($disk, $storagePath);
         $outputPath = $this->tempPath('pdf');
 
         try {
@@ -204,7 +204,7 @@ class CompressionUtil
         $originalSize = 0;
 
         foreach ($storagePaths as $storagePath) {
-            $absolutePath = Storage::disk($sourceDisk)->path($storagePath);
+            $absolutePath = $this->absolutePath($sourceDisk, $storagePath);
             $originalSize += Storage::disk($sourceDisk)->size($storagePath);
             $zip->addFile($absolutePath, basename($storagePath));
         }
@@ -351,6 +351,19 @@ class CompressionUtil
     }
 
     // ─── Helpers ────────────────────────────────────────────────────────────────
+
+    private function absolutePath(string $disk, string $storagePath): string
+    {
+        $adapter = Storage::disk($disk);
+
+        if (!method_exists($adapter, 'path')) {
+            throw new \RuntimeException(
+                "Disk '{$disk}' does not support resolving an absolute path. Use a local-backed disk."
+            );
+        }
+
+        return $adapter->path($storagePath);
+    }
 
     private function tempPath(string $suffix): string
     {

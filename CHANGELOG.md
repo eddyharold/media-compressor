@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/eddyharold/media-compressor/compare/v1.2.0...v1.3.0) (2026-05-15)
+
+
+### Features
+
+* support Laravel 12 and Pest 3 ([77bca56](https://github.com/eddyharold/media-compressor/commit/77bca560c21018358fe26aa278ce8445216945b4))
+
+
+### Bug Fixes
+
+* guard absolute path resolution for non-local disks ([49a012c](https://github.com/eddyharold/media-compressor/commit/49a012c7f8e261ab3f318b1f027c3c2092f89523))
+
 ## [1.2.0](https://github.com/eddyharold/media-compressor/compare/v1.1.0...v1.2.0) (2026-05-15)
 
 
